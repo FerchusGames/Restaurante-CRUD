@@ -4,15 +4,29 @@
 using namespace std;
 class loclizacion
 {
-public:	
-	string planeta = "tierra", pais="mexico", estado="jalisco", ciudad="guadalajara", municipio="zapopan", colonia="las aguilas", calle="rio tuxpan";
-	int numero = 85;
 private:
+	string planeta = "tierra", pais="mexico", estado="jalisco", ciudad="guadalajara", municipio="zapopan", colonia="las aguilas", calle="rio tuxpan";
+public:	
+	int numero = 85;
 	int coordenadas;
+	loclizacion(string,string,string,string,string,string,string, int, int);
 };
+loclizacion::loclizacion(string _planeta ,string _pais ,string _estado,string _ciudad, string _municipio, string _colonia, string _calle, int _numero, int _coordenadas) 
+{
+	planeta = _planeta;
+	pais = _pais;
+	estado = _estado;
+	ciudad = _ciudad;
+	municipio = _municipio;
+	colonia = _colonia;
+	calle = _calle;
+	numero = _numero;
+	coordenadas = _coordenadas;
 
-loclizacion::loclizacion()
+}
+int main()
 {
 
 }
+
 

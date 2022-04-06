@@ -2,11 +2,9 @@
 //
 
 #include <iostream>
-
-
-
+#include "publicidad.h"
 int main()
 {
-    
+	crearPublicidad();
 }
 

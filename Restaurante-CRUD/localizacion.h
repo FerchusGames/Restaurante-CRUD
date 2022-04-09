@@ -2,32 +2,43 @@
 #include <iostream>
 #include <string>
 using namespace std;
-class loclizacion
+class localizacion
 {
 private:
-	string planeta = "tierra", pais="mexico", estado="jalisco", ciudad="guadalajara", municipio="zapopan", colonia="las aguilas", calle="rio tuxpan";
+	string pais, estado, ciudad, municipio, colonia, calle;
 public:	
-	int numero = 85;
-	int coordenadas = 20;
-	int coordenados = -103;
-	loclizacion(string,string,string,string,string,string,string, int, int,int);
+	localizacion(string,string,string,string,string,string);
+	~localizacion();
 };
-loclizacion::loclizacion(string _planeta ,string _pais ,string _estado,string _ciudad, string _municipio, string _colonia, string _calle, int _numero, int _coordenadas,int _coordenados) 
+localizacion::localizacion(string _pais ,string _estado,string _ciudad, string _municipio, string _colonia, string _calle) 
 {
-	planeta = _planeta;
 	pais = _pais;
 	estado = _estado;
 	ciudad = _ciudad;
 	municipio = _municipio;
 	colonia = _colonia;
 	calle = _calle;
-	numero = _numero;
-	coordenadas = _coordenadas;
-	coordenados = _coordenados;
 }
-int main()
+localizacion::~localizacion()
 {
+}
 
+void crearLocalizacion(localizacion*& locali;)
+{
+	std::string pais, estado, ciudad, municipio, colonia, calle;
+	std:cout << "Ingrese el pais de la localizacion del restaurante: ";
+	std::cin << pais;
+	std:cout << "Ingrese el estado de la localizacion del restaurante: ";
+	std::cin << estado;
+	std:cout << "Ingrese la ciudad de la localizacion del restaurante: ";
+	std::cin << ciudad;
+	std:cout << "Ingrese el municipio de la localizacion del restaurante: ";
+	std::cin << municipio;
+	std:cout << "Ingrese la colonia de la localizacion del restaurante: ";
+	std::cin << colonia;
+	std:cout << "Ingrese la colonia de la localizacion del restaurante: ";
+	std::cin << calle;
+	locali = new localizacion(pais, estado, ciudad, municipio, colonia, calle);
 }
 
 

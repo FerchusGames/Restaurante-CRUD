@@ -11,36 +11,66 @@ private:
     int edad;
 public:
     Persona(string, int);
+    ~Persona();
+    virtual void mostrarDatos();
 };
 Persona::Persona(string _nombre, int _edad)
 {
     nombre = _nombre;
     edad = _edad;
 }
-class Adulto :public Persona
+Persona::~Persona()
 {
-private:
-    float dinero;
-    string trabajo;
-public:
-    Adulto(string, int, float, string);
-};
-Adulto::Adulto(string _nombre, int _edad, float _dinero, string _trabajo) :Persona(_nombre, _edad)
-{
-    dinero = _dinero;
-    trabajo = _trabajo;
 }
+
 class Empleado :public Persona
 {
 private:
-    int horas_de_trabajo;
+    int horas_de_trabajo, sueldo;
     string posicion_trabajo;
+    
 public:
-    Empleado(string, int, float, string, int, string);
-
+    Empleado(string, int, int, int, string);
+    ~Empleado();
+    void mostrarDatos();
 };
-Empleado::Empleado(string _nombre, int _edad, float _dinero, string _trabajo, int _horas_de_trabajo, string _posicion_trabajo) :Persona(_nombre, _edad)
+Empleado::Empleado(string _nombre, int _edad, int _horas_de_trabajo, int _sueldo, string _posicion_trabajo) :Persona(_nombre, _edad)
 {
     horas_de_trabajo = _horas_de_trabajo;
+    sueldo = _sueldo;
     posicion_trabajo = _posicion_trabajo;
 }
+Empleado::~Empleado() 
+{
+}
+
+void crearEmpleado(Empleado*& Empli)
+{
+    string nombre, puesto;
+    int edad, sueldo, cantidad_horas;
+    std::cout << "Escriba el nombre del empleado: ";
+    std::cin >> nombre;
+    std::cout << "Escriba el sueldo del empleado: ";
+    std::cin >> sueldo;
+    std::cout << "Escriba el puesto del empleado: ";
+    std::cin >> puesto;
+    std::cout << "Escriba la edad del empleado: ";
+    std::cin >> edad;
+    std::cout << "Escriba la cantidad de horas que trabaja el empleado: ";
+    std::cin >> cantidad_horas;
+    Empli = new Empleado(noombre, edad, cantidad_horas, sueldo, puesto);
+}
+
+Persona::mostrarDatos()
+{
+    std::cout << "El nombre del empleado es: " << nombre << std::endl;
+    std::cout << "La edad del empleado es: " << edad << std::endl;
+}
+Empleado::mostrarDatos()
+{
+    Persona::mostrarDatos();
+    std::cout << "El empleado trabaja " << horas_de_trabajo << " horas." << std::endl;
+    std::cout << "El puesto del empleado es: " << posicion_trabajo << std::endl;
+    std::cout << "El empleado gana: $" << sueldo << std::endl;
+}
+

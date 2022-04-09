@@ -25,7 +25,7 @@ Proveedor::Proveedor(std::string _nombre, std::string _recurso, float _costoAnua
 	metodoTransporte = _metodoTransporte;
 }
 
-void CrearProovedor()
+void CrearProovedor(Proveedor*& nuevoProveedor)
 {
 	std::string _nombre;
 	std::string _recurso;
@@ -45,6 +45,6 @@ void CrearProovedor()
 	std::cout << "Ingresa el metodo de transporte de los recursos";
 	std::getline(std::cin, _metodoTransporte);
 
-	nuevoProovedor = new Provedor(_nombre, _recurso, _costoAnual, _localizacion, _metodoTransporte);
+	nuevoProveedor = new Proveedor(_nombre, _recurso, _costoAnual, _localizacion, _metodoTransporte);
 }
 

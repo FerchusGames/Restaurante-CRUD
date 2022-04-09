@@ -2,9 +2,43 @@
 // 
 
 #include <iostream>
+#include <fstream>
+#include "Provedor.h"
+#include "Persona.h"
+#include "menu.h"
+#include "localizacion.h"
 #include "publicidad.h"
+
 int main()
 {
-	crearPublicidad();
+	
+}
+
+void escribir()
+{
+	Proveedor* proveedor = new Proveedor(" ", " ", 0, " ", " ");
+	Empleado* empleado;
+	publicidad*
+	localizacion* locali;
+	ofstream archivo;
+	/*
+	std::string nombreArchivo;
+	std::cout << "Escribe el nombre del archivo: ";
+	std::cin.ignore();
+	std::getline(cin, nombreArchivo);
+	archivo.open(nombreArchivo.c_str(), ios::out);
+	if (archivo.fail())
+	{
+		std::cout << "No se puede abrir el archivo." << std::endl;
+		exit(1);
+	}
+	*/
+	//crearPublicidad(publici);
+	//CrearProovedor(proveedor);
+	crearEmpleado(empleado);
+	//crearLocalizacion(locali);
+	empleado->mostrarDatos();
+	//archivo.close();
+
 }
 

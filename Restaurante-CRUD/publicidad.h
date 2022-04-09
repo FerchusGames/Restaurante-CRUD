@@ -1,28 +1,27 @@
 #include <iostream>
 #pragma once
 
-class publicidad
+class Publicidad
 {
 public: //metodos
-	publicidad(int, int, std::string);
-	~publicidad();
+	Publicidad(int, int, std::string);
+	~Publicidad();
 private: //atributos
 	int costoMensual = 0;
 	int costoAnual = 0;
 	std::string plataformas;
 };
 
-publicidad::publicidad(int _costoM,int _costoA, std::string _plat)
+Publicidad::Publicidad(int _costoM,int _costoA, std::string _plat)
 {
 	costoAnual = _costoA;
 	costoMensual = _costoM;
 	plataformas = _plat;
 }
-publicidad::~publicidad()
+Publicidad::~Publicidad()
 {
-
 }
-void crearPublicidad()
+void crearPublicidad(Publicidad*& Publici)
 {
 	int _costoM;
 	int _costoA;
@@ -33,6 +32,5 @@ void crearPublicidad()
 	std::cin >> _costoA;
 	std::cout << "\nLa plataforma: ";
 	std::cin >> _plataforma;
-	publicidad* Publici;
-	Publici = new publicidad(_costoM, _costoA, _plataforma);
+	Publici = new Publicidad(_costoM, _costoA, _plataforma);
 }

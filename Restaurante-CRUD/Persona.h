@@ -1,20 +1,19 @@
 #pragma once
-
+#include <fstream>
 #include <iostream>
-using namespace std;
 #include <string>
 #include "Persona.h"
 class Persona
 {
 private:
-    string nombre;
+    std::string nombre;
     int edad;
 public:
-    Persona(string, int);
+    Persona(std::string, int);
     ~Persona();
-    virtual void mostrarDatos();
+    virtual void mostrarDatos(std::ofstream);
 };
-Persona::Persona(string _nombre, int _edad)
+Persona::Persona(std::string _nombre, int _edad)
 {
     nombre = _nombre;
     edad = _edad;
@@ -22,23 +21,25 @@ Persona::Persona(string _nombre, int _edad)
 Persona::~Persona()
 {
 }
-void Persona::mostrarDatos()
+void Persona::mostrarDatos(std::ofstream archivo)
 {
     std::cout << "El nombre del empleado es: " << nombre << std::endl;
+    archivo << "El nombre del empleado es: " << nombre << std::endl;
     std::cout << "La edad del empleado es: " << edad << std::endl;
+    archivo << "La edad del empleado es: " << edad << std::endl;
 }
 class Empleado :public Persona
 {
 private:
     int horas_de_trabajo, sueldo;
-    string posicion_trabajo;
+    std::string posicion_trabajo;
     
 public:
-    Empleado(string, int, int, int, string);
+    Empleado(std::string, int, int, int, std::string);
     ~Empleado();
-    void mostrarDatos() override;
+    void mostrarDatos(std::ofstream) override;
 };
-Empleado::Empleado(string _nombre, int _edad, int _horas_de_trabajo, int _sueldo, string _posicion_trabajo) :Persona(_nombre, _edad)
+Empleado::Empleado(std::string _nombre, int _edad, int _horas_de_trabajo, int _sueldo, std::string _posicion_trabajo) : Persona(_nombre, _edad)
 {
     horas_de_trabajo = _horas_de_trabajo;
     sueldo = _sueldo;
@@ -47,17 +48,20 @@ Empleado::Empleado(string _nombre, int _edad, int _horas_de_trabajo, int _sueldo
 Empleado::~Empleado() 
 {
 }
-void Empleado::mostrarDatos() 
+void Empleado::mostrarDatos(std::ofstream archivo) 
 {
-    Persona::mostrarDatos();
+    Persona::mostrarDatos(archivo);
     std::cout << "El empleado trabaja " << horas_de_trabajo << " horas." << std::endl;
+    archivo << "El empleado trabaja " << horas_de_trabajo << " horas." << std::endl;
     std::cout << "El puesto del empleado es: " << posicion_trabajo << std::endl;
+    archivo << "El puesto del empleado es: " << posicion_trabajo << std::endl;
     std::cout << "El empleado gana: $" << sueldo << std::endl;
+    archivo << "El empleado gana: $" << sueldo << std::endl;
 }
 
 void crearEmpleado(Empleado*& Empli)
 {
-    string nombre, puesto;
+    std::string nombre, puesto;
     int edad, sueldo, cantidad_horas;
     std::cout << "Escriba el nombre del empleado: ";
     std::cin >> nombre;

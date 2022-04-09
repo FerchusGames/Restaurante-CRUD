@@ -2,15 +2,15 @@
 #include <iostream>
 #include <string>
 using namespace std;
-class localizacion
+class Localizacion
 {
 private:
 	string pais, estado, ciudad, municipio, colonia, calle;
 public:	
-	localizacion(string,string,string,string,string,string);
-	~localizacion();
+	Localizacion(string, string, string, string, string, string);
+	~Localizacion();
 };
-localizacion::localizacion(string _pais ,string _estado,string _ciudad, string _municipio, string _colonia, string _calle) 
+Localizacion::Localizacion(string _pais, string _estado, string _ciudad, string _municipio, string _colonia, string _calle)
 {
 	pais = _pais;
 	estado = _estado;
@@ -19,11 +19,11 @@ localizacion::localizacion(string _pais ,string _estado,string _ciudad, string _
 	colonia = _colonia;
 	calle = _calle;
 }
-localizacion::~localizacion()
+Localizacion::~Localizacion()
 {
 }
 
-void crearLocalizacion(localizacion*& locali)
+void crearLocalizacion(Localizacion*& locali)
 {
 	std::string pais, estado, ciudad, municipio, colonia, calle;
 	std:cout << "Ingrese el pais de la localizacion del restaurante: ";
@@ -38,7 +38,7 @@ void crearLocalizacion(localizacion*& locali)
 	std::cin >> colonia;
 	std:cout << "Ingrese la colonia de la localizacion del restaurante: ";
 	std::cin >> calle;
-	locali = new localizacion(pais, estado, ciudad, municipio, colonia, calle);
+	locali = new Localizacion(pais, estado, ciudad, municipio, colonia, calle);
 }
 
 

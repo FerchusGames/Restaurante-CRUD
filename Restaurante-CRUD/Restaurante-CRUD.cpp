@@ -1,5 +1,5 @@
 // Restaurante-CRUD.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
-// 
+// Omar Alejandro Angeles Hernandez
 
 #include <iostream>
 #include <fstream>
@@ -19,7 +19,7 @@ void escribir()
 	Proveedor* proveedor = new Proveedor(" ", " ", 0, " ", " ");
 	Empleado* empleado;
 	publicidad*
-	localizacion* locali;
+		localizacion* locali;
 	ofstream archivo;
 	/*
 	std::string nombreArchivo;
@@ -39,6 +39,4 @@ void escribir()
 	//crearLocalizacion(locali);
 	empleado->mostrarDatos();
 	//archivo.close();
-
 }
-

@@ -23,21 +23,21 @@ localizacion::~localizacion()
 {
 }
 
-void crearLocalizacion(localizacion*& locali;)
+void crearLocalizacion(localizacion*& locali)
 {
 	std::string pais, estado, ciudad, municipio, colonia, calle;
 	std:cout << "Ingrese el pais de la localizacion del restaurante: ";
-	std::cin << pais;
+	std::cin >> pais;
 	std:cout << "Ingrese el estado de la localizacion del restaurante: ";
-	std::cin << estado;
+	std::cin >> estado;
 	std:cout << "Ingrese la ciudad de la localizacion del restaurante: ";
-	std::cin << ciudad;
+	std::cin >> ciudad;
 	std:cout << "Ingrese el municipio de la localizacion del restaurante: ";
-	std::cin << municipio;
+	std::cin >> municipio;
 	std:cout << "Ingrese la colonia de la localizacion del restaurante: ";
-	std::cin << colonia;
+	std::cin >> colonia;
 	std:cout << "Ingrese la colonia de la localizacion del restaurante: ";
-	std::cin << calle;
+	std::cin >> calle;
 	locali = new localizacion(pais, estado, ciudad, municipio, colonia, calle);
 }
 

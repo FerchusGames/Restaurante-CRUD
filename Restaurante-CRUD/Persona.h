@@ -22,7 +22,11 @@ Persona::Persona(string _nombre, int _edad)
 Persona::~Persona()
 {
 }
-
+void Persona::mostrarDatos()
+{
+    std::cout << "El nombre del empleado es: " << nombre << std::endl;
+    std::cout << "La edad del empleado es: " << edad << std::endl;
+}
 class Empleado :public Persona
 {
 private:
@@ -32,7 +36,7 @@ private:
 public:
     Empleado(string, int, int, int, string);
     ~Empleado();
-    void mostrarDatos();
+    void mostrarDatos() override;
 };
 Empleado::Empleado(string _nombre, int _edad, int _horas_de_trabajo, int _sueldo, string _posicion_trabajo) :Persona(_nombre, _edad)
 {
@@ -42,6 +46,13 @@ Empleado::Empleado(string _nombre, int _edad, int _horas_de_trabajo, int _sueldo
 }
 Empleado::~Empleado() 
 {
+}
+void Empleado::mostrarDatos() 
+{
+    Persona::mostrarDatos();
+    std::cout << "El empleado trabaja " << horas_de_trabajo << " horas." << std::endl;
+    std::cout << "El puesto del empleado es: " << posicion_trabajo << std::endl;
+    std::cout << "El empleado gana: $" << sueldo << std::endl;
 }
 
 void crearEmpleado(Empleado*& Empli)
@@ -58,19 +69,7 @@ void crearEmpleado(Empleado*& Empli)
     std::cin >> edad;
     std::cout << "Escriba la cantidad de horas que trabaja el empleado: ";
     std::cin >> cantidad_horas;
-    Empli = new Empleado(noombre, edad, cantidad_horas, sueldo, puesto);
+    Empli = new Empleado(nombre, edad, cantidad_horas, sueldo, puesto);
 }
 
-Persona::mostrarDatos()
-{
-    std::cout << "El nombre del empleado es: " << nombre << std::endl;
-    std::cout << "La edad del empleado es: " << edad << std::endl;
-}
-Empleado::mostrarDatos()
-{
-    Persona::mostrarDatos();
-    std::cout << "El empleado trabaja " << horas_de_trabajo << " horas." << std::endl;
-    std::cout << "El puesto del empleado es: " << posicion_trabajo << std::endl;
-    std::cout << "El empleado gana: $" << sueldo << std::endl;
-}
 

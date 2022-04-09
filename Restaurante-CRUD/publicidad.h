@@ -21,7 +21,7 @@ Publicidad::Publicidad(int _costoM,int _costoA, std::string _plat)
 Publicidad::~Publicidad()
 {
 }
-void crearPublicidad(Publicidad*& Publici)
+void crearPublicidad(Publicidad*& publicidad1)
 {
 	int _costoM;
 	int _costoA;
@@ -32,5 +32,5 @@ void crearPublicidad(Publicidad*& Publici)
 	std::cin >> _costoA;
 	std::cout << "\nLa plataforma: ";
 	std::cin >> _plataforma;
-	Publici = new Publicidad(_costoM, _costoA, _plataforma);
+	publicidad1 = new Publicidad(_costoM, _costoA, _plataforma);
 }

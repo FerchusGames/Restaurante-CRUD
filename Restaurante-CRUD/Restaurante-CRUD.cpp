@@ -18,8 +18,8 @@ void escribir()
 {
 	Proveedor* proveedor = new Proveedor(" ", " ", 0, " ", " ");
 	Empleado* empleado;
-	publicidad*
-		localizacion* locali;
+	Publicidad* publici;
+	localizacion* locali;
 	ofstream archivo;
 	/*
 	std::string nombreArchivo;
